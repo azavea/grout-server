@@ -30,7 +30,7 @@ def add_non_admin_users_to_public_group(apps, schema_editor):
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('ashlar_auth', '0001_initial'),
+        ('grout_auth', '0001_initial'),
     ]
 
     operations = [

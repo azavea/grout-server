@@ -1,4 +1,4 @@
-"""ashlar_server URL Configuration
+"""grout_server URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.8/topics/http/urls/
@@ -17,9 +17,9 @@ from django.conf.urls import include, url
 from django.contrib import admin
 
 from rest_framework import routers
-from ashlar.urls import urlpatterns as ashlar_urlpatterns
+from grout.urls import urlpatterns as grout_urlpatterns
 
-import ashlar_auth.views as auth_views
+import grout_auth.views as auth_views
 
 
 router = routers.DefaultRouter()
@@ -27,8 +27,8 @@ router = routers.DefaultRouter()
 router.register(r'users', auth_views.UserViewSet)
 router.register(r'groups', auth_views.GroupViewSet)
 
-# Register default Ashlar URLs
-urlpatterns = ashlar_urlpatterns
+# Register default Grout URLs.
+urlpatterns = grout_urlpatterns
 
 # Add authentication routes
 urlpatterns += [

@@ -5,12 +5,12 @@ services:
   db:
     image: quay.io/azavea/postgis:2.4-postgres10.3-slim
 
-  ashlar:
+  grout:
     build: .
     depends_on:
       - db
     volumes:
-      - .:/opt/ashlar-server
+      - .:/opt/grout-server
     entrypoint: python
     command: manage.py runserver 0.0.0.0:8000
     ports:

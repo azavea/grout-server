@@ -7,7 +7,7 @@ from django.contrib.auth.models import User, Group
 from rest_framework.request import Request
 from rest_framework.test import APIClient
 
-from ashlar_auth.permissions import IsOwnerOrAdmin, ReadersReadWritersWrite, IsAdminOrReadOnly
+from grout_auth.permissions import IsOwnerOrAdmin, ReadersReadWritersWrite, IsAdminOrReadOnly
 
 
 class UserViewTestCase(TestCase):

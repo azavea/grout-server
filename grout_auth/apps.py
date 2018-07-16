@@ -25,9 +25,9 @@ def add_to_default_group(sender, **kwargs):
         user.groups.add(group)
 
 
-class AshlarAuthConfig(AppConfig):
-    name = 'ashlar_auth'
-    verbose_name = 'Authentication and permissions for the Ashlar server'
+class GroutAuthConfig(AppConfig):
+    name = 'grout_auth'
+    verbose_name = 'Authentication and permissions for the Grout server'
 
     def ready(self):
         from django.contrib.auth.models import User
