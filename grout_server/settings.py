@@ -1,5 +1,5 @@
 """
-Django settings for ashlar_server project.
+Django settings for grout_server project.
 """
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -39,9 +39,9 @@ INSTALLED_APPS = (
     'rest_framework',
     'rest_framework.authtoken',
     'django_extensions',
-    'ashlar',
-    'ashlar_server',
-    'ashlar_auth',
+    'grout',
+    'grout_server',
+    'grout_auth',
     'corsheaders',
     'rest_framework_gis',
 )
@@ -58,7 +58,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
 ]
 
-ROOT_URLCONF = 'ashlar_server.urls'
+ROOT_URLCONF = 'grout_server.urls'
 
 TEMPLATES = [
     {
@@ -89,7 +89,7 @@ DATABASES = {
     }
 }
 
-WSGI_APPLICATION = 'ashlar_server.wsgi.application'
+WSGI_APPLICATION = 'grout_server.wsgi.application'
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
@@ -151,15 +151,15 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 10,
 }
 
-# Ashlar authentication settings
-DEFAULT_ADMIN_EMAIL = os.environ.get("ASHLAR_ADMIN_EMAIL", 'systems+ashlar@azavea.com')
-DEFAULT_ADMIN_USERNAME = os.environ.get("ASHLAR_ADMIN_USERNAME", 'admin')
-DEFAULT_ADMIN_PASSWORD = os.environ.get("ASHLAR_ADMIN_PASSWORD", 'admin')
+# Grout authentication settings
+DEFAULT_ADMIN_EMAIL = os.environ.get("GROUT_ADMIN_EMAIL", 'systems+grout@azavea.com')
+DEFAULT_ADMIN_USERNAME = os.environ.get("GROUT_ADMIN_USERNAME", 'admin')
+DEFAULT_ADMIN_PASSWORD = os.environ.get("GROUT_ADMIN_PASSWORD", 'admin')
 USER_GROUPS = {
-    'READ_ONLY': os.environ.get('ASHLAR_READ_ONLY_GROUP', 'public'),
-    'READ_WRITE': os.environ.get('ASHLAR_READ_WRITE_GROUP', 'staff'),
-    'ADMIN': os.environ.get('ASHLAR_ADMIN_GROUP', 'admin')
+    'READ_ONLY': os.environ.get('GROUT_READ_ONLY_GROUP', 'public'),
+    'READ_WRITE': os.environ.get('GROUT_READ_WRITE_GROUP', 'staff'),
+    'ADMIN': os.environ.get('GROUT_ADMIN_GROUP', 'admin')
 }
 
-# Ashlar-specific global variables
-ASHLAR = { 'SRID': 4326 }
+# Grout-specific global variables
+GROUT = { 'SRID': 4326 }

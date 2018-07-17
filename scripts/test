@@ -15,13 +15,13 @@ source "${DIR}/_config.sh"
 source "${DIR}/_init_db.sh"
 
 function usage() {
-    echo -n "Usage: $(basename "$0") {git,ashlar} [VERSIONS]
+    echo -n "Usage: $(basename "$0") {git,grout} [VERSIONS]
 Run tests.
 
 Options:
     -h --help       Display this help text
     git             Check git commit titles
-    ashlar          Run tests for the app, optionally limited to Python/Django VERSIONS
+    grout           Run tests for the app, optionally limited to Python/Django VERSIONS
     <none>          Run all tests
 
 Versions:
@@ -36,12 +36,12 @@ Versions:
 "
 }
 
-function ashlar_tests() {
+function grout_tests() {
     echo "Testing the app..."
     echo "-------------------------------------------------------------------"
 
     init_db
-    docker-compose run --rm ashlar manage.py test
+    docker-compose run --rm grout manage.py test
 
     # Stop the database service so that containers aren't lying around
     docker-compose stop db
@@ -70,7 +70,7 @@ function git_tests() {
 function all_tests() {
     echo "Running all tests..."
     echo "-------------------------------------------------------------------"
-    ashlar_tests
+    grout_tests
     echo "-------------------------------------------------------------------"
     git_tests
     echo "-------------------------------------------------------------------"
@@ -86,7 +86,7 @@ if [ "${BASH_SOURCE[0]}" = "${0}" ]; then
         case "${1:-}" in
             -h|--help) usage ;;
             git)       git_tests ;;
-            ashlar)    shift 1 && ashlar_tests "$@" ;;
+            grout)     shift 1 && grout_tests "$@" ;;
             *)         usage ;;
         esac
     fi

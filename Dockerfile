@@ -1,6 +1,6 @@
 FROM quay.io/azavea/django:1.11-python3.6-slim
 
-# Install OS-level dependencies for Ashlar
+# Install OS-level dependencies for Grout
 RUN apt-get update
 RUN apt-get -y autoremove && apt-get install -y \
 	libgeos-dev \
@@ -15,8 +15,8 @@ RUN pip install -U -r /tmp/requirements.txt
 # Do not buffer output (allows Docker to stream stdout)
 ENV PYTHONUNBUFFERED 0
 
-COPY . /opt/ashlar-server
-WORKDIR /opt/ashlar-server
+COPY . /opt/grout-server
+WORKDIR /opt/grout-server
 
 EXPOSE 8000
 ENTRYPOINT python

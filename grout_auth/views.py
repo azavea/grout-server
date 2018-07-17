@@ -7,10 +7,10 @@ from rest_framework.authtoken.models import Token
 from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.response import Response
 
-from ashlar.pagination import OptionalLimitOffsetPagination
+from grout.pagination import OptionalLimitOffsetPagination
 
-from ashlar_auth.serializers import UserSerializer, GroupSerializer
-from ashlar_auth.permissions import (IsAdminOrReadSelfOnly, IsAdminOrReadOnly,
+from grout_auth.serializers import UserSerializer, GroupSerializer
+from grout_auth.permissions import (IsAdminOrReadSelfOnly, IsAdminOrReadOnly,
                                      is_admin)
 
 # match what auth-service.js looks for
